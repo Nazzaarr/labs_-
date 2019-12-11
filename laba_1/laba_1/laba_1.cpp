@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
 bool ex = true;
@@ -13,7 +13,7 @@ class figure {
 public:
 
 	int x, y, r, x1, y1;
-	
+
 	figure() {
 		this->x = x;
 		this->y = y;
@@ -24,8 +24,12 @@ public:
 
 	void input() {
 
-		cout << "Enter rectangle coord: ";
-		cin >> x >> y;
+		cout << "Enter rectangle coord: \n";
+		cout << "x: ";
+		cin >> x;
+		cout << endl;
+		cout << "y: ";
+		cin >> y;
 	}
 	void inputradius() {
 		cout << "Enter circle radius: ";
@@ -48,12 +52,16 @@ public:
 
 	void coords() {
 
-		cout << "Enter coord: ";
-		cin >> x1 >> y1;
+		cout << "Enter your coord: \n";
+		cout << "x: ";
+		cin >> x1;
+		cout << endl;
+		cout << "y: ";
+		cin >> y1;
 	}
 
 	void result() {
-		if ((x1 < r) && (y1 < r)) {  
+		if ((x1 < r) || (y1 < r) || (x1 > x) || (y1 > y)) {
 			cout << "not included in the area";
 		}
 		else
@@ -70,8 +78,8 @@ int main()
 	first.input();
 	first.inputradius();
 	first.check();
-	first.coords();	
+	first.coords();
 	first.check1();
 	first.result();
-	
+
 }
